@@ -236,10 +236,8 @@ def main():
             elif apple.position[1] >= SCREEN_HEIGHT - 20\
                     or apple.position[1] <= 20:
                 apple.position = apple.randomize_pozition()
-                pygame.display.update()
             while apple.position in snake.positions:
                 apple.randomize_pozition()
-                pygame.display.update()
 
         if snake.positions[0] in snake.positions[1:]:
             for j in range(0, len(snake.positions)):
