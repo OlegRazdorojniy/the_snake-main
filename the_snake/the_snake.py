@@ -69,11 +69,11 @@ class Apple(GameObject):
 
     def __init__(self, body_color=APPLE_COLOR):
         super().__init__(body_color)
-        self.position = self.randomize_position()
+        self.position = self.randomize_pozition()
 
     """randomize_pozition"""
 
-    def randomize_position(self):
+    def randomize_pozition(self):
         """Return"""
         return randint(0, SCREEN_WIDTH // 20) * 20, \
             randint(0, SCREEN_HEIGHT // 20) * 20
@@ -229,15 +229,15 @@ def main():
         if snake.positions[0] == apple.position:
             check_direction(snake.positions, snake.direction)
             snake.length += 1
-            apple.position = apple.randomize_position()
+            apple.position = apple.randomize_pozition()
             if apple.position[0] >= SCREEN_WIDTH - 20\
                     or apple.position[0] <= 20:
-                apple.position = apple.randomize_position()
+                apple.position = apple.randomize_pozition()
             elif apple.position[1] >= SCREEN_HEIGHT - 20\
                     or apple.position[1] <= 20:
-                apple.position = apple.randomize_position()
+                apple.position = apple.randomize_pozition()
             while apple.position in snake.positions:
-                apple.randomize_position()
+                apple.randomize_pozition()
 
         if snake.positions[0] in snake.positions[1:]:
             for j in range(0, len(snake.positions)):
